@@ -1,0 +1,6 @@
+interface:
+  display_name: "UX/UI Quality"
+  short_description: "Качество запрошенного интерфейса соразмерно задаче"
+  default_prompt: "Используй $ux-ui-quality, чтобы улучшить запрошенный интерфейс и применить правила к затронутому участку соразмерно задаче и риску."
+policy:
+  allow_implicit_invocation: true

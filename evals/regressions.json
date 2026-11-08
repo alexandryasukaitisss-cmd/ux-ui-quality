@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "purpose": "Уточнения по наблюдаемым ответам версии 0.1.0. Структурные тесты не доказывают поведение модели. Исходные 15 запросов и критерии не меняются.",
+  "baseline_prompt_rubric_sha256": "b857ff278e9c5592435489024ca5c2a9a8fe08d9ad1fb5091125e76d32f8301f",
+  "regressions": [
+    {
+      "id": "F01",
+      "case_id": "whole-journey",
+      "owners": [
+        {
+          "path": "skills/ux-ui-quality/SKILL.md",
+          "heading": "Рабочий подход"
+        },
+        {
+          "path": "skills/ux-ui-quality/references/journeys.md",
+          "heading": "Единицы анализа"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "six-dimensions",
+          "required_dimensions": [
+            "service-touchpoints",
+            "interface-actions",
+            "decisions",
+            "re-entry",
+            "context-switches",
+            "waiting"
+          ],
+          "acceptance": "В итоговом сравнении до/после представлены все шесть видов нагрузки раздельно. Без данных стоят неизвестное и способ проверки, не придуманные числа."
+        },
+        {
+          "id": "proportional-scope",
+          "acceptance": "Уточнение относится к целому процессу и не требует полного аудита для локального компонента."
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "case_id": "unknown-submit",
+      "owners": [
+        {
+          "path": "skills/ux-ui-quality/references/principles.md",
+          "rule_id": "UX-20"
+        },
+        {
+          "path": "skills/ux-ui-quality/references/journeys.md",
+          "heading": "Восстановление после отправки"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "action-name",
+          "acceptance": "Название основной кнопки прямо обозначает сверку исходной операции; название «Повторить» с пояснением не принимается."
+        },
+        {
+          "id": "no-reconciliation-exit",
+          "acceptance": "Если сверка недоступна, есть реальный путь сохранения номера и контекста, допустимой помощи или выхода с сохранённым статусом; новая отправка не запускается."
+        },
+        {
+          "id": "system-guarantees",
+          "acceptance": "Защита от дубликатов не обещана одним интерфейсом; учитываются гарантии конкретной системы."
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "case_id": "no-app-access",
+      "owners": [
+        {
+          "path": "skills/ux-ui-quality/SKILL.md",
+          "heading": "Рабочий подход"
+        },
+        {
+          "path": "skills/ux-ui-quality/references/journeys.md",
+          "heading": "Запись приёмки"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "planned-accessibility",
+          "acceptance": "План явно включает клавиатурный путь и применимые проверки доступности."
+        },
+        {
+          "id": "planned-evidence",
+          "acceptance": "По сценариям названы шаги, ожидаемый результат и будущие свидетельства состояний и переходов."
+        },
+        {
+          "id": "unverified-outcome",
+          "acceptance": "Наблюдаемые результаты, снимки и прохождение не выдуманы; исход остаётся непроверенным."
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "case_id": "target-and-drag",
+      "owners": [
+        {
+          "path": "skills/ux-ui-quality/SKILL.md",
+          "heading": "Рабочий подход"
+        },
+        {
+          "path": "skills/ux-ui-quality/references/principles.md",
+          "rule_id": "UX-20"
+        },
+        {
+          "path": "skills/ux-ui-quality/references/principles.md",
+          "rule_id": "UX-21"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "refusal-versus-unknown",
+          "acceptance": "После сбоя изменяющего действия различены подтверждённый отказ без фиксации и неизвестный исход. Исправление и повтор относятся к первому; второй требует сверки или гарантий исходной операции."
+        },
+        {
+          "id": "local-scope-exception",
+          "acceptance": "Для чисто локального изменения без этого риска не требуется серверная сверка или распределённый протокол."
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "case_id": "ai-simplification",
+      "owners": [
+        {
+          "path": "skills/ux-ui-quality/references/principles.md",
+          "rule_id": "UX-29"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "compare-before-addition",
+          "acceptance": "ИИ и гибрид не назначены готовым решением до сравнения с улучшенными обычными фильтрами и прямыми действиями."
+        },
+        {
+          "id": "ordinary-interface-can-win",
+          "acceptance": "Сравнение может выбрать обычный интерфейс, даже если пользователь предложил чат. Необходимость ИИ не объявляется доказанной самим предложением."
+        },
+        {
+          "id": "authorized-ai-scope",
+          "acceptance": "Явное авторизованное требование об ИИ можно выполнить в его объёме; уточнение не превращается в запрет ИИ или обещание непроверенной пользы."
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "case_id": "busy-b2b",
+      "owners": [
+        {
+          "path": "skills/ux-ui-quality/references/principles.md",
+          "rule_id": "UX-08"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "conditional-component-details",
+          "acceptance": "Конкретные размеры, прокрутка, страницы, виртуализация и клавиатурная модель условны до определения платформы, существующего компонента и задачи."
+        },
+        {
+          "id": "performance-accessibility-check",
+          "acceptance": "Выбранный вариант требует проверки быстродействия и доступности, а не универсальных числовых правил."
+        },
+        {
+          "id": "minimum-sufficient-table",
+          "acceptance": "Простая таблица не превращается в интерактивную сетку без необходимости; полезная плотность и существующие рабочие ориентиры сохраняются."
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "case_id": "accessible-auth",
+      "owners": [
+        {
+          "path": "skills/ux-ui-quality/references/principles.md",
+          "rule_id": "UX-24"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "paste-and-external-managers",
+          "acceptance": "Успех одного встроенного менеджера не используется как общее оправдание запрета вставки. Проверены поддерживаемые внешние менеджеры, включая использующие копирование и вставку."
+        },
+        {
+          "id": "whole-path-alternative",
+          "acceptance": "При блокировке копирования/вставки требуется допустимая доступная альтернатива во всём пути, а не только на первом поле."
+        },
+        {
+          "id": "permitted-mechanisms-retained",
+          "acceptance": "Сохраняются допустимые механизмы помощи, альтернативы и исключения WCAG 3.3.8; любой когнитивный тест не объявляется запрещённым."
+        }
+      ]
+    }
+  ]
+}
