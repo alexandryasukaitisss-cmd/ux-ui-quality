@@ -1,5 +1,7 @@
 # UX/UI Quality
 
+[![CI](https://github.com/alexandryasukaitisss-cmd/ux-ui-quality/actions/workflows/ci.yml/badge.svg)](https://github.com/alexandryasukaitisss-cmd/ux-ui-quality/actions/workflows/ci.yml)
+
 [Русский](README.ru.md) · [Skill](skills/ux-ui-quality/SKILL.md) · [License](LICENSE)
 
 A Codex skill for making the right size of UX/UI improvement. Fix a confusing control by checking its affected states; review a whole journey when the task changes how people finish their work. The skill helps Codex make that distinction on websites, web apps, and native apps.
@@ -31,3 +33,13 @@ python3 -B -m unittest discover -s tests -v
 ~~~
 
 The tests check structure, links, source references, and rubric integrity. They do not measure the effect on a model's design decisions. See [attribution](NOTICE.md).
+
+
+## Works across agents (`SKILL.md` standard)
+
+Beyond Codex plugins, `skills/ux-ui-quality/` follows the portable `SKILL.md` + `references/` layout and can be dropped directly into **Claude Code**, **Cursor**, or **Antigravity** skills folders.
+
+### Example: scope sizing in action
+
+- **Local control task** (*"Fix disabled Submit button tooltip"*): checks focus, contrast, disabled reason, and keyboard state on that control — skips an unsolicited full-app redesign audit.
+- **Full journey task** (*"Redesign subscription cancellation flow"*): inspects entry point, destructive confirmation, error recovery, accessibility, and requires rendered scenario verification before sign-off.
